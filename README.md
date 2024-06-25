@@ -1,4 +1,12 @@
 # kantan
+
+## `kantan init`
+
+## under the hood
+
+As of right now (really early development) I'm using Rust for the app itself and using Go for the deploy scripts, and any others I might need.
+
+I intend to have cargo build my app and test it and all that, and then have my go scripts handle making github releases for the various packages/brew formula/installers/winget stuff.
 ## goals
 
 Create a simple command line interface for automatically starting a generic project.
