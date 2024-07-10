@@ -6,7 +6,8 @@
 
 As of right now (really early development) I'm using Rust for the app itself and using Go for the deploy scripts, and any others I might need.
 
-I intend to have cargo build my app and test it and all that, and then have my go scripts handle making github releases for the various packages/brew formula/installers/winget stuff.
+I intend to have cargo build my app and test it and all that, and then have my go scripts handle making github releases for the various packages/brew formulae/
+installers/choco stuff.
 ## goals
 
 Create a simple command line interface for automatically starting a generic project.
@@ -20,6 +21,10 @@ The tool would then run any other steps, like initializng git or creating a venv
 Potentially, I could also use something like `kantan package myProject <operating_system>` to create a package to be installed on a particular system. 
 This is a secondary goal once the first part is robust. 
 
-My primary goal is to have a fairly generic organizational scheme for all of my projects to keep developmentstreamlined and efficient. Kantan will know how to tweak my generic schema to be optimized for one language or another. Multi language features should be an extension to this, either by seperate templates or by modularizing things such that it can create projects within projects.
+My primary goal is to have a fairly generic organizational scheme for all of my projects to keep developmentstreamlined and efficient.
+Kantan will know how to tweak my generic schema to be optimized for one language or another. Multi language features should be an extension to this,
+either by seperate templates or by modularizing things such that it can create projects within projects.
 
 As a secondary goal, I basically want to abstract all the different tools and steps to building and packaging a project into one streamlined interface. 
+
+I plan on releasing this for macOS(brew), linux(RPM, apt), and Windows (installer, choco)
