@@ -1,3 +1,5 @@
+# Ignore the scratch directory
+scratch/
 # Ignore buildfiles
 build/
 obj/

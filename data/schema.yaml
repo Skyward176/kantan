@@ -1,3 +1,7 @@
-Directories:
+directories:
   - src
   - lib
+  - etc
+  - scripts:
+    - go
+    - python

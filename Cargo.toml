@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 yaml-rust2 = "0.8.0"
+fstrings = "0.2.3"
