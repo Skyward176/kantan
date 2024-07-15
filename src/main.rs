@@ -1,17 +1,17 @@
 use std::fs::File;
+use std::fs::create_dir_all;
 use std::io::prelude::*;
-use fstrings::f;
 use yaml_rust2 as yaml;
 
 fn main() {
     println!("Hello, world!");
-    build_fs("data/schema.yaml");
+    read_schema("data/schema.yaml", "scratch");
 }
-fn generate_path(path: &str) -> String {
-    let path = f!("{}/{}", "scratch", "test");
-    println!("{}", path);
+fn generate_paths(base: &str, path: &str) {
+    let full_path :String = format!("./{}/{}", base, path);
+    create_dir_all(full_path);// need to handle errors here
 }
-fn build_fs(file: &str) {// takes a schema as yaml and creates the directories from it
+fn read_schema(file: &str, dest: &str) {// takes a schema as yaml and creates the directories from it
     println!("Trying to open {}", file);
     let mut contents = File::open(file).unwrap();
     let mut string = String::new();
@@ -19,8 +19,6 @@ fn build_fs(file: &str) {// takes a schema as yaml and creates the directories f
 
     let doc = yaml::YamlLoader::load_from_str(&string).unwrap();
     for item in doc[0]["directories"].clone() {
-        println!("{:?}", item);
+        generate_paths(dest, item.as_str().unwrap());
     }
-    
-    println!("Called create dir!");
 }
