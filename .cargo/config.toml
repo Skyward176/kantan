@@ -1,0 +1,4 @@
+[build]
+#out-dir = './build'
+[env]
+CARGO_TARGET_DIR = "./build"
