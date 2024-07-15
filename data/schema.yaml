@@ -1,0 +1,6 @@
+directories:
+  - src
+  - lib
+  - etc
+  - scripts/go
+  - scripts/python
